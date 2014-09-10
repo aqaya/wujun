@@ -17,14 +17,14 @@ public class WrapperResponse extends HttpServletResponseWrapper {
    public void finalize() throws Throwable {    
       super.finalize();    
       output.close();    
-      tmpWriter.close();    
+      tmpWriter.close(); 
    }    
    public String getContent() {    
       try {    
          tmpWriter.flush();   //刷新该流的缓冲，详看java.io.Writer.flush()    
          String s = tmpWriter.getByteArrayOutputStream().toString("UTF-8");    
          //此处可根据需要进行对输出流以及Writer的重置操作    
-       //比如tmpWriter.getByteArrayOutputStream().reset()    
+         //比如tmpWriter.getByteArrayOutputStream().reset()    
          return s;    
       } catch (UnsupportedEncodingException e) {    
          return "UnsupportedEncoding";    

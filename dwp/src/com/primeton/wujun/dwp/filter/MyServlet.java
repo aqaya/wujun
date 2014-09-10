@@ -35,10 +35,11 @@ public class MyServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//response.setContentType("application/json;charset=utf-8");
+		
 		response.getWriter().append("Hello ");
-		System.out.println("middle");
 		response.getWriter().print("world!");
+		response.getWriter().print("我要去淘宝买一套用于练习法轮功的制服！某宝万岁！!");
+		
 	}
 
 }
