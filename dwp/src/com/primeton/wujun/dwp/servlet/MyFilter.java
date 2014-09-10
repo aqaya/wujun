@@ -49,7 +49,7 @@ public class MyFilter implements Filter {
 		WrapperResponse wp =new  WrapperResponse((HttpServletResponse) response);
 		String content = wp.getContent();
 		System.out.println(content);
-		pw.print("2");
+		pw.print("23");
 		System.out.println("After MyFilter!");
 	}
 
