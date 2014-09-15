@@ -51,6 +51,17 @@ public class MyFilter implements Filter {
 //		System.out.println(content);
 //		pw.print("2");
 //		System.out.println("After MyFilter!");
+		response.setContentType("text/html;charset=utf-8");
+		WrapperResponse wp =new  WrapperResponse((HttpServletResponse) response);
+		PrintWriter pw = wp.getWriter();
+		chain.doFilter(request, wp);
+		String content = wp.getContent();
+		String newContent = content.replace("·¨ÂÖ¹¦", "Ä³¹¦");
+		newContent = newContent.replace("ÌÔ±¦", "Ä³±¦");
+		pw = response.getWriter();
+		pw.print(newContent);
+		
+		
 	}
 
 	/**
