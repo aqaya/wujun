@@ -36,8 +36,11 @@ public class MyServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//response.setContentType("application/json;charset=utf-8");
+		System.out.println(request.getSession(false)==null);
+		
+		
 		response.getWriter().append("Hello ");
-		System.out.println("middle");
+		//System.out.println("middle");
 		response.getWriter().print("world!");
 	}
 
