@@ -40,6 +40,17 @@ public class MyFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		// TODO Auto-generated method stub
+//		System.out.println("Before MyFilter!");
+//		PrintWriter pw = response.getWriter();
+//		
+//		pw.print("1");
+		chain.doFilter(request, response);
+//		WrapperResponse wp =new  WrapperResponse((HttpServletResponse) response);
+//		String content = wp.getContent();
+//		System.out.println(content);
+//		pw.print("2");
+//		System.out.println("After MyFilter!");
 		response.setContentType("text/html;charset=utf-8");
 		WrapperResponse wp =new  WrapperResponse((HttpServletResponse) response);
 		PrintWriter pw = wp.getWriter();

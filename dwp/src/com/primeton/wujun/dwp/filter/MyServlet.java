@@ -35,7 +35,6 @@ public class MyServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		response.getWriter().append("Hello ");
 		response.getWriter().print("world!");
 		response.getWriter().print("我要去淘宝买一套用于练习法轮功的制服！某宝万岁！!");
