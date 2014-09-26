@@ -4,8 +4,8 @@ Created on 2014年9月25日
 
 @author: wjaxm_000
 '''
-import com.primeton.wujun.python.insertsort.InsertSort
-from com.primeton.wujun.python.insertsort import InsertSort
+import com.primeton.wujun.python.insertsortinsertsort
+from com.primeton.wujun.python import insertsortinsertsort
 def shell_sort(data, n = None):
     if n == None:
         n = len(data) / 2
@@ -13,7 +13,7 @@ def shell_sort(data, n = None):
             n = n + 1
     for i in range(0, n):
         newdata = data[i:len(data):n]
-        InsertSort.insert_sort(newdata)
+        insertsortinsertsort.insert_sort(newdata)
         data[i:len(data):n] = newdata
     if n <> 1:
         d = n / 2

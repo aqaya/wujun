@@ -7,8 +7,8 @@ Created on 2014年9月25日
 import random
 import datetime
 import copy
-from com.primeton.wujun.python.bubblesort.BubbleSort import bubblesort
-sortfunc = bubblesort
+from com.primeton.wujun.python.quicksort.quicksort import quicksort
+sortfunc = quicksort
 data=[342,3434,234,34,54,6,2,76,87,90,3,5234,54,26,357]
 def sort_perfmon(sortfunc, data):
     sort_data = copy.deepcopy(data)
