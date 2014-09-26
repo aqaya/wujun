@@ -4,12 +4,14 @@ Created on 2014年9月26日
 
 @author: wjaxm_000
 '''
+import os
 
+def anyTrue(predicate, sequence):
+    return True in map(predicate, sequence)
 
-format = '5s 4x 3s'
-
-
-import struct
-print struct.unpack(format, 'Test astring')
-print list(struct.unpack(format, 'Test astring'))
-#('Test', 'ing')
+def filterFiles(folder, exts):
+    for fileName in os.listdir(folder):
+        if os.path.isdir(folder + '/' + fileName):
+            filterFiles(folder + '/' + fileName, exts)
+        elif anyTrue(fileName.endswith, exts):
+            print fileName
