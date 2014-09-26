@@ -17,6 +17,8 @@ smtpServer = 'smtp.primeton.com'
 fromaddr = 'wujun@primeton.com'
 toaddrs = 'wujun@primeton.com'
 msg = 'Subject: Hello'
-server = smtplib.SMTP(smtpServer)
+server = smtplib.SMTP()
+server.connect(smtpServer)  
+server.login("wujun@primeton.com","424424a")
 server.sendmail(fromaddr, toaddrs, msg)
 server.quit( )
