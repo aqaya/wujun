@@ -3,6 +3,7 @@
 Created on 2014年9月26日
 
 @author: wjaxm_000
+ref:http://www.cnblogs.com/xiaowuyi/archive/2012/03/17/2404015.html
 '''
 import httplib
 
