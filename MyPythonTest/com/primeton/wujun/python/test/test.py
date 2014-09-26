@@ -5,21 +5,27 @@ Created on 2014年9月26日
 @author: wjaxm_000
 ref:http://www.cnblogs.com/xiaowuyi/archive/2012/03/17/2404015.html
 '''
-import httplib
+def addlist(alist):
+    for i in alist:
+        yield i + 1
 
-conn=httplib.HTTPConnection("www.cnblogs.com")
-conn.request("GET", "/coderzh/archive/2008/05/13/1194445.html")
-r=conn.getresponse()
-print r.read() 
+alist = [1, 2, 3, 4]
+for x in addlist(alist):
+    print x,
+    
+    
+# def h():
+#     print 'Wen Chuan'
+#     yield 5
+#     print 'Fighting!'
 
 
-import smtplib
-smtpServer = 'smtp.primeton.com'
-fromaddr = 'wujun@primeton.com'
-toaddrs = 'wujun@primeton.com'
-msg = 'Subject: Hello'
-server = smtplib.SMTP()
-server.connect(smtpServer)  
-server.login("wujun@primeton.com","424424a")
-server.sendmail(fromaddr, toaddrs, msg)
-server.quit( )
+def h():
+    print 'Wen Chuan',
+    m = yield 5  # Fighting!
+    print m
+    d = yield 12
+    print 'We are together!'
+c = h()
+c.next()
+c.send('Fighting!') 
