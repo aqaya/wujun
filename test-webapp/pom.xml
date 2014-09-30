@@ -21,37 +21,14 @@
   <name>test-webapp Maven Webapp</name>
   <url>http://maven.apache.org</url>
  
-  
-  
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-     <dependency>
-    	<groupId>com.primeton.wujun.test</groupId>
-    	<artifactId>test-jar</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
+  	<dependency>
+		<groupId>com.primeton.wujun.test</groupId>
+  		<artifactId>test-jar</artifactId>
+  		<version>0.0.1</version>
+  	</dependency>
   </dependencies>
-  <build>
   
-  
-	  <plugins>
-	  	<plugin>
-	  		<groupId>org.mortbay.jetty</groupId>
-	  		<artifactId>jetty-maven-plugin</artifactId>
-	  		<version>7.1.6.v20100715</version>
-	  		<configuration>
-	  		<scanIntervalSeconds>10</scanIntervalSeconds>
-	  		<webAppConfig>
-	  			<contextPath>/test</contextPath>
-	  		</webAppConfig>
-	  		</configuration>
-	  	</plugin>
-	  </plugins>
-    <finalName>test-webapp</finalName>
-  </build>
+
+	  
 </project>
