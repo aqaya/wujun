@@ -31,10 +31,8 @@ public class LoginFilter implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-
-		// pass the request along the filter chain
+		System.out.println("/" + LoginFilter.class.getResource("/").toString());
+		System.out.println("." + LoginFilter.class.getResource(".").toString());
 		System.out.println("Befaore doFilter in LoginFilter!");
 		chain.doFilter(request, response);
 		System.out.println("After doFilter in LoginFilter!");
