@@ -10,20 +10,15 @@ import redis.clients.jedis.JedisPool;
 
 class TestCase{
 	public static void main(String[] args) {
-		JedisPool jp = new JedisPool("192.168.6.196");
+		JedisPool jp = new JedisPool("192.168.1.104");
+		
 		Jedis jedis = jp.getResource();//new Jedis("192.168.6.196",6379);
-		jedis.set("foo", "bar");
-		jedis.setex("time", 1, "1s");
+		jedis.set("a", "1");
+		jedis.set("b", "2");
 		System.out.println(jedis.get("time"));
-		try {
-			Thread.sleep(998);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 		System.out.println(jedis.get("time"));
-		jedis.append("foo", "fuck");
 		Map<String,String> hm = new HashMap<String, String>();
-		hm.put("a", "1");
+		hm.put("a", "2");
 		hm.put("b", "2");
 		jedis.hmset("hm", hm);
 		String value = jedis.get("foo");
