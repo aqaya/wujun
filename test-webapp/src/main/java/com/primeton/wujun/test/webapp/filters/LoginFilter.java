@@ -32,7 +32,6 @@ public class LoginFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		System.out.println("/" + LoginFilter.class.getResource("/").toString());
-		System.out.println("." + LoginFilter.class.getResource(".").toString());
 		System.out.println("Befaore doFilter in LoginFilter!");
 		chain.doFilter(request, response);
 		System.out.println("After doFilter in LoginFilter!");
