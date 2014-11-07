@@ -1,5 +1,0 @@
-init
-branch1
-branch1_modify
-branch1_modify2
-branch1_modify3
