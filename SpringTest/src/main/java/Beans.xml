@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="person" class="com.primeton.wujun.springtest.demo1.Person">
+		<property name="name" value="wujun"></property>
+		<property name="age" value="12"></property>
+		<property name="myDog" ref="dog"></property>
+	</bean>
+	<bean id="dog" class="com.primeton.wujun.springtest.demo1.Dog">
+		<property name="name" value="Harry"></property>
+		<property name="age" value="1"></property>
+	</bean>
+</beans>
