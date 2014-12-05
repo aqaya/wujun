@@ -1,26 +1,25 @@
 package com.primeton.wujun.test.jmx;
 
-import java.lang.management.*;
-import javax.management.*;
+import javax.management.MBeanServer;
+import javax.management.MBeanServerFactory;
+import javax.management.ObjectName;
+
+import com.sun.jdmk.comm.HtmlAdaptorServer;
 
 public class Main {
     /* For simplicity, we declare "throws Exception".  Real programs
        will usually want finer-grained exception handling.  */
     public static void main(String[] args) throws Exception {
-	// Get the Platform MBean Server
-	MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+    	MBeanServer server = MBeanServerFactory.createMBeanServer();
 
-	// Construct the ObjectName for the MBean we will register
-	ObjectName name = new ObjectName("com.primeton.wujun.test.jmx:type=HelloBean");
+        ObjectName helloName = new ObjectName("chengang:name=HelloWorld");
+        server.registerMBean(new Hello(), helloName);
 
-	// Create the Hello World MBean
-	Hello mbean = new Hello();
+        ObjectName adapterName = new ObjectName("HelloAgent:name=htmladapter,port=8082");
+        HtmlAdaptorServer adapter = new HtmlAdaptorServer();
+        server.registerMBean(adapter, adapterName);
 
-	// Register the Hello World MBean
-	mbs.registerMBean(mbean, name);
-
-	// Wait forever
-	System.out.println("Waiting forever...");
-	Thread.sleep(Long.MAX_VALUE);
+        adapter.start();
+        System.out.println("start.....");
     }
 }
