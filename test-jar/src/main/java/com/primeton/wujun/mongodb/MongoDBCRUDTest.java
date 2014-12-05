@@ -2,6 +2,7 @@ package com.primeton.wujun.mongodb;
 
 import java.net.UnknownHostException;
 import java.sql.SQLException;
+import java.util.Random;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -34,13 +35,14 @@ public class MongoDBCRUDTest {
 		DB db = mongo.getDB("wujun");
 		DBCollection dbCollection = db.getCollection("wujun");
 		int i = 0;
-//		while (i<100000) {
-//			DBObject dbo = new BasicDBObject();
-//			dbo.put("name", "小明");
-//			dbo.put("age", new Random().nextInt()%8000);
-//			dbCollection.insert(dbo);
-//		}
-		DBCursor dbCursor = dbCollection.find(new BasicDBObject("age",new BasicDBObject("$gte",7999)));
+		while (i++<1000) {
+			DBObject dbo = new BasicDBObject();
+			dbo.put("name", "小明");
+			dbo.put("age", new Random().nextInt()%8000);
+			dbo.put("addressId", new Random().nextInt()%8000);
+			dbCollection.insert(dbo);
+		}
+		DBCursor dbCursor = dbCollection.find();
 		System.out.println(dbCursor.count());
 		while (dbCursor.hasNext()) {
 			DBObject dbObject = dbCursor.next();
