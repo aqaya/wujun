@@ -18,7 +18,7 @@ public class Main {
         ObjectName adapterName = new ObjectName("HelloAgent:name=htmladapter,port=8082");
         HtmlAdaptorServer adapter = new HtmlAdaptorServer();
         server.registerMBean(adapter, adapterName);
-
+        
         adapter.start();
         System.out.println("start.....");
     }
