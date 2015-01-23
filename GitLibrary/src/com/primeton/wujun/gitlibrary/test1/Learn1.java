@@ -5,5 +5,4 @@ public class Learn1{
 		System.out.println("我要去水果店买水果！");
 		System.out.println("我要去水果店买香蕉！"); 
 		int d; 
-	}
 }
