@@ -21,7 +21,6 @@ import org.nutz.mvc.RequestPath;
 /**
  * Servlet Filter implementation class Login
  */
-@WebFilter("/*")
 public class Login implements Filter {
     private static final String IGNORE = "^.+\\.(png|gif|jpg|js|css|jpeg|swf|ico)$";
     private Pattern ignorePtn;
