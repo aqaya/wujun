@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/jxc/js/nui/nui.js"></script>
+</head>
+<body>
+	<div id="datagrid1" showPager="true" class="nui-datagrid" allowSortColumn="true" style="width:100%;height:70%;"
+		dataField="data" totalField="total" idField="id" url="/jxc/product/query" allowResize="true" allowCellValid="true"
+		allowCellEdit="true" allowCellSelect="true" multiSelect="true" editNextOnEnterKey="true"  editNextRowCell="true">
+	    <div property="columns">
+	   		<div type="indexcolumn"></div>
+            <div type="checkcolumn"></div>
+	    	<div width="15%" headerAlign="center" align="center" width="15%" renderer="operate">操作</div>
+	        <div field="tiaoma" width="15%"  vtype="required" headerAlign="center" allowSort="true">条码号
+	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
+	        </div>    
+	        <div field="huohao" width="15%" headerAlign="center" allowSort="true">货号
+	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
+	        </div>
+	        <div field="name" width="15%"  vtype="required" headerAlign="center" allowSort="true">商品名称
+	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
+	        </div>
+	        <div field="jinjia" width="10%"  vtype="float" headerAlign="center" allowSort="true">进价
+	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
+	        </div>
+	        <div field="shoujia" width="10%"  vtype="float"  headerAlign="center" allowSort="true">售价
+	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
+	        </div>
+	        <div field="kucun" width="10%" headerAlign="center"  vtype="float"  allowSort="true">库存
+	        	<input property="editor" class="nui-textbox" style="width:100%;" vtype="int"/>
+	        </div>
+	        <div field="xiaoliang" width="10%" headerAlign="center" vtype="float" allowSort="true">销量
+	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
+	        </div>
+	        <div field="danwei" width="5%" headerAlign="center" align="center" allowSort="true">单位
+	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
+	        </div>
+	    </div>
+	</div>
+</body>
+</html>

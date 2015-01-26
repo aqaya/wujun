@@ -9,13 +9,13 @@ import org.nutz.dao.pager.Pager;
 
 import com.wujun.jxc.bean.Product;
 import com.wujun.jxc.dao.IProductDao;
-import com.wujun.jxc.daoImpl.ProductDAOImpl;
+import com.wujun.jxc.daoImpl.ProductDaoImpl;
 import com.wujun.jxc.service.ICountService;
 import com.wujun.jxc.service.IProductService;
 import com.wujun.jxc.util.DataConversionUtil;
 
 public class ProductServiceImpl implements IProductService {
-	private static IProductDao pDao = new ProductDAOImpl();
+	private static IProductDao pDao = new ProductDaoImpl();
 	private static ICountService cs = new CountServiceImpl();
 	@Override
 	public List<Product> query(Condition cnd, Pager pager) {

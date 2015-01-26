@@ -1,7 +1,10 @@
 package com.wujun.jxc.bean;
 
+import java.util.List;
+
 import org.nutz.dao.entity.annotation.Column;
 import org.nutz.dao.entity.annotation.Id;
+import org.nutz.dao.entity.annotation.Many;
 import org.nutz.dao.entity.annotation.Name;
 import org.nutz.dao.entity.annotation.Table;
 
@@ -23,6 +26,8 @@ public class Customer {
 	int score;
 	@Column
 	String info;
+	@Many(field = "cid", target = Price.class)
+	List<Price> prices;
 	public int getId() {
 		return id;
 	}
@@ -70,5 +75,11 @@ public class Customer {
 	}
 	public void setInfo(String info) {
 		this.info = info;
+	}
+	public List<Price> getPrices() {
+		return prices;
+	}
+	public void setPrices(List<Price> prices) {
+		this.prices = prices;
 	}
 }

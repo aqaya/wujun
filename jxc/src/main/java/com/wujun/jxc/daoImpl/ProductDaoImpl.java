@@ -13,7 +13,7 @@ import com.wujun.jxc.dao.IProductDao;
 import com.wujun.jxc.factory.DAOFactory;
 import com.wujun.jxc.util.StringUtil;
 
-public class ProductDAOImpl implements IProductDao {
+public class ProductDaoImpl implements IProductDao {
 	private static Dao dao = DAOFactory.getDao();
 	@Override
 	public List<Product> query(Condition cnd,Pager pager) {
