@@ -24,7 +24,7 @@ public class PriceModule {
 		Map<String, Object> map = ps.queryByProductID(pid, pageIndex + 1, pageSize);
 		return JSON.Encode(map);
 	}
-	@At("/byproductid")
+	@At("/bycustomerid")
 	@Ok("raw:json")
 	public String queryByCustomerID(@Param("pageIndex")int pageIndex, 
 						 @Param("pageSize")int pageSize,

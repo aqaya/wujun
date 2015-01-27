@@ -43,22 +43,22 @@
 	var menu = [	
 				{title: "商品管理", id:"productmanager"},
 				{title: "用户管理", id:"usermanager"},
-				{title: "客户管理", id:"customermanager"}
+				{title: "客户管理", id:"customermanager"},
+				{title: "价格管理", id:"pricemanager"}
 		   ];
 			
 	var tabs = {
 				productmanager:
-					[{title: "商品列表", url:"productmanager/productlist.html", refreshOnClick: true},
-					{title: "入库管理", url: "productmanager/productlist.html", refreshOnClick: true},
-					{title: "出库管理", url:"productmanager/productlist.html", refreshOnClick: true}
+					[{title: "商品列表", url:"product/productlist.html", refreshOnClick: true}
 				],
 				usermanager:
-	       			[{title: "用户列表", url:"productmanager/productlist.html", refreshOnClick: true},
-	       			{title: "新增用户", url:"productmanager/productlist.html", refreshOnClick: true},
-	       			{title: "修改用户", url:"productmanager/productlist.html", refreshOnClick: true}
-	       			],
-	       		customermanager:
-	           		[{title: "客户列表", url: "productmanager/productlist.html", refreshOnClick: true}],
+	       			[{title: "用户列表", url:"user/userlist.html", refreshOnClick: true},
+	       			{title: "新增用户", url:"user/userlist.html", refreshOnClick: true},
+	       			{title: "修改用户", url:"user/userlist.html", refreshOnClick: true}],
+				customermanager:
+	           		[{title: "客户列表", url: "customer/customerlist.html", refreshOnClick: true}],
+	       		pricemanager:
+	           		[{title: "价格管理", url: "price/pricelist.html", refreshOnClick: true}],
 				 };
 				 
 				 

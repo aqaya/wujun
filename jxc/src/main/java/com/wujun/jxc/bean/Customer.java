@@ -13,9 +13,7 @@ public class Customer {
 	@Id
 	int id;
 	@Name
-	String username;
-	@Column
-	String password;
+	String name;
 	@Column
 	String company;
 	@Column
@@ -34,18 +32,12 @@ public class Customer {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	public void setName(String name) {
+		this.name = name;
+	} 
 	public String getCompany() {
 		return company;
 	}

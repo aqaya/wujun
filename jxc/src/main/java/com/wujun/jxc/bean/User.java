@@ -7,10 +7,14 @@ import org.nutz.dao.entity.annotation.Table;
 
 @Table("user")
 public class User {
+	public static String YES = "Y";
+	public static String NO = "N";
 	@Id
 	int id;
 	@Name
 	String username;
+	@Column
+	int age;
 	@Column
 	String password;
 	@Column
@@ -20,7 +24,7 @@ public class User {
 	@Column
 	String qq;
 	@Column
-	String ownername;
+	String name;
 	@Column
 	String info;
 	@Column
@@ -67,16 +71,22 @@ public class User {
 	public void setQq(String qq) {
 		this.qq = qq;
 	}
-	public String getOwnername() {
-		return ownername;
+	public String getName() {
+		return name;
 	}
-	public void setOwnername(String ownername) {
-		this.ownername = ownername;
+	public void setName(String ownername) {
+		this.name = ownername;
 	}
 	public String getInfo() {
 		return info;
 	}
 	public void setInfo(String info) {
 		this.info = info;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
 	}
 }

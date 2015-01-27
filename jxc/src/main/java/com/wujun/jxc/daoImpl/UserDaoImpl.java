@@ -19,7 +19,7 @@ public class UserDaoImpl implements IUserDao {
 
 	@Override
 	public List<User> queryByPager(Condition cnd, Pager pager) {
-		return null;
+		return dao.query(User.class, cnd, pager);
 	}
 
 }
