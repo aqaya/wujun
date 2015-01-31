@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/common.css"/>
-<script src="js/nui/nui.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/common.css"/>
+<script src="<%=request.getContextPath() %>/js/nui/nui.js"></script>
 </head>
 <body>
 <div class="container">
@@ -49,16 +51,16 @@
 			
 	var tabs = {
 				productmanager:
-					[{title: "商品列表", url:"product/productlist.html", refreshOnClick: true}
+					[{title: "商品列表", url:"<%=request.getContextPath() %>/product/productlist.jsp", refreshOnClick: true}
 				],
 				usermanager:
-	       			[{title: "用户列表", url:"user/userlist.html", refreshOnClick: true},
-	       			{title: "新增用户", url:"user/userlist.html", refreshOnClick: true},
-	       			{title: "修改用户", url:"user/userlist.html", refreshOnClick: true}],
+	       			[{title: "用户列表", url:"<%=request.getContextPath() %>/user/userlist.jsp", refreshOnClick: true},
+	       			{title: "新增用户", url:"<%=request.getContextPath() %>/user/userlist.jsp", refreshOnClick: true},
+	       			{title: "修改用户", url:"<%=request.getContextPath() %>/user/userlist.jsp", refreshOnClick: true}],
 				customermanager:
-	           		[{title: "客户列表", url: "customer/customerlist.html", refreshOnClick: true}],
+	           		[{title: "客户列表", url: "<%=request.getContextPath() %>/customer/customerlist.jsp", refreshOnClick: true}],
 	       		pricemanager:
-	           		[{title: "价格管理", url: "price/pricelist.html", refreshOnClick: true}],
+	           		[{title: "价格管理", url: "<%=request.getContextPath() %>/price/pricelist.jsp", refreshOnClick: true}],
 				 };
 				 
 				 
@@ -108,7 +110,7 @@
             data:"",
             cache: false,
   		 	success:function(text) {
-      		 		window.top.location.href="/login/logout.html";
+      		 		window.top.location.href="<%=request.getContextPath() %>/login/logout.jsp";
   		 	},
   		 	error : function(text){
   		 		alert("操作失败！")

@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>修改商品记录</title>
-<script src="/js/nui/nui.js"></script>
-<link rel="stylesheet" href="/css/common.css"/>
+<script src="<%=request.getContextPath() %>/js/nui/nui.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/common.css"/>
 </head>
 <body>
 		<fieldset style="width:95%;height:90%;"> 
@@ -89,7 +89,7 @@
 				return;
 			}
 			nui.ajax({
-				url:"/product/churuku",
+				url:"<%=request.getContextPath() %>/product/churuku",
      		 	type:'POST',
 	            data:{
 	            	id:id,

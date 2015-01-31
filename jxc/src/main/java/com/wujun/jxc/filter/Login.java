@@ -9,7 +9,6 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -56,13 +55,13 @@ public class Login implements Filter {
 			//如果是登录请求或登录界面，则忽略，否则回到登录界面
 			RequestPath path = Mvcs.getRequestPathObject(req);
 			String url = path.getUrl();
-			if (!url.endsWith("user/login") && !url.endsWith("login.html") && !ignorePtn.matcher(url).find()) {
+			if (!url.endsWith("user/login") && !url.endsWith("login.jsp") && !ignorePtn.matcher(url).find()) {
 				String username = (String) session.getAttribute("username");	
 				if(username!=null && !username.equals("")){
 					chain.doFilter(request, response);
 				}else{
 					String contextPath = req.getContextPath();
-					((HttpServletResponse)response).sendRedirect(contextPath + "/login/login.html");
+					((HttpServletResponse)response).sendRedirect(contextPath + "/login/login.jsp");
 					//request.getRequestDispatcher("/login/login.html").forward(request, response);;
 				}
 			}else{

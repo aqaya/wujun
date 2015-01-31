@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="/js/nui/nui.js"></script>
+<script src="<%=request.getContextPath() %>/js/nui/nui.js"></script>
 </head>
 <body style="height:100%">
 	    <div class="nui-panel" title="查询条件" style="width:100%;" showToolbar="true" showFooter="false">
@@ -100,7 +100,7 @@
             
             dg.loading("保存中，请稍后......");
             $.ajax({
-                url: "/product/save",
+                url: "<%=request.getContextPath() %>/product/save",
                 data: { data: json },
                 type: "post",
                 success: function (text) {

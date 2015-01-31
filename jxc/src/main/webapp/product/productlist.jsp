@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="/js/nui/nui.js"></script>
-<link rel="stylesheet" href="../css/common.css"/>
+<script src="<%=request.getContextPath() %>/js/nui/nui.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/css/common.css"/>
 <style type="text/css">
 	a{
 		text-decoration: underline;
@@ -118,7 +118,7 @@
 				return;
 			}
 			nui.open({
-       			 url : "/product/churuku.html",
+       			 url : "<%=request.getContextPath() %>/product/churuku.jsp",
        			 title : "商品入库",
        			 type : 'POST',
        			 width : 500,
@@ -148,7 +148,7 @@
 				return;
 			}
 			nui.open({
-      			 url : "/product/churuku.html",
+      			 url : "<%=request.getContextPath() %>/product/churuku.jsp",
       			 title : "商品出库",
       			 type : 'POST',
       			 width : 500,
@@ -195,7 +195,7 @@
 	            
 	            dg.loading("保存中，请稍后......");
 	            $.ajax({
-	                url: "/product/save",
+	                url: "<%=request.getContextPath() %>/product/save",
 	                data: { data: json },
 	                type: "post",
 	                success: function (text) {

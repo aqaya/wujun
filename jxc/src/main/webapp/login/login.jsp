@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
-<script src="/js/nui/nui.js"></script>
+<script src="<%=request.getContextPath() %>/js/nui/nui.js"></script>
 <style type="text/css">
 	.container{
 		width:300px;
@@ -44,7 +44,7 @@
 		nui.parse();
 		window.onload = function(){
 			if(window!=window.top){
-				window.top.location.href = "/login/login.html"
+				window.top.location.href = "<%=request.getContextPath() %>/login/login.jsp"
 			}
 		}
 		function login(e){
@@ -53,13 +53,13 @@
 	        if (form.isValid() == false) return;
 			var data = form.getData();
 			nui.ajax({
-				url:"/user/login",
+				url:"<%=request.getContextPath() %>/user/login",
      		 	type:'POST',
 	            data:data,
 	            cache: false,
       		 	success:function(text) {
 	      		 	if(text == true) {
-	      		 		window.location.href="/index.html?username="+data.username;
+	      		 		window.location.href="<%=request.getContextPath() %>/index.jsp";
 	      		 	} else {
 						document.getElementById("error").style.visibility="visible";
 						setTimeout(function(){
