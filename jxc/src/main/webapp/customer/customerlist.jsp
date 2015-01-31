@@ -1,32 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="/jxc/js/nui/nui.js"></script>
+<script src="/js/nui/nui.js"></script>
 </head>
 <body style="height:100%">
 	    <div class="nui-panel" title="查询条件" style="width:100%;" showToolbar="true" showFooter="false">
 	    <div id="queryForm">
 	    	<table id="tableSearch" style="width:100%;">
             <tr>
-                <td style="text-align:right">用户名：</td>
+                <td style="text-align:right">顾客名称：</td>
                 <td>  
-                   <input class="nui-textbox" name="username"/>
+                   <input class="nui-textbox" name="name"/>
                 </td>
-                 <td style="text-align:right;width=80px">用户姓名：</td>
+                 <td style="text-align:right;width=80px">公司名称：</td>
                 <td>  
-                    <input class="nui-textbox" name="name"/>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:right">最小年龄：</td>
-                <td>  
-                   <input class="nui-textbox" name="minAge"/>
-                </td>
-                 <td style="text-align:right;width=80px">最大年龄：</td>
-                <td>  
-                    <input class="nui-textbox" name="maxAge"/>
+                    <input class="nui-textbox" name="company"/>
                 </td>
             </tr>
             <tr>
@@ -52,30 +44,24 @@
         </div>
     </div>
 	<div id="datagrid1" showPager="true" class="nui-datagrid" allowSortColumn="true" style="width:100%;height:70%;"
-		dataField="data" totalField="total" idField="id" url="/jxc/user/query" allowResize="true" allowCellValid="true"
+		dataField="data" totalField="total" idField="id" url="/customer/query" allowResize="true" allowCellValid="true"
 		allowCellEdit="true" allowCellSelect="true" multiSelect="true" editNextOnEnterKey="true"  editNextRowCell="true">
 	    <div property="columns">
 	   		<div type="indexcolumn" width="5%"  ></div>
             <div type="checkcolumn" width="5%"  ></div>
-	        <div field="username" width="10%"  vtype="float"  headerAlign="center" allowSort="true">用户名
+	        <div field="name" width="10%"  vtype="float"  headerAlign="center" allowSort="true">顾客名称
 	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
 	        </div>
-	        <div field="username" width="10%" headerAlign="center"  vtype="float"  allowSort="true">用户姓名
+	        <div field="address" width="25%" headerAlign="center"  vtype="float"  allowSort="true">地址
 	        	<input property="editor" class="nui-textbox" style="width:100%;" vtype="int"/>
 	        </div>
-	        <div field="phonenumber" width="20%" headerAlign="center" vtype="float" allowSort="true">电话号码
+	        <div field="company" width="25%" headerAlign="center" vtype="float" allowSort="true">公司
 	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
 	        </div>
-	        <div field="age" width="5%" headerAlign="center" align="center" allowSort="true">年龄
+	        <div field="score" width="5%" headerAlign="center" align="center" allowSort="true">评分
 	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
 	        </div>
-	        <div field="qq" width="12%" headerAlign="center" align="center" allowSort="true">QQ
-	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
-	        </div>
-	        <div field="email" width="13%" headerAlign="center" align="center" allowSort="true">eMail
-	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
-	        </div>
-	        <div field="info" width="20%" headerAlign="center" align="center" allowSort="true">备注
+	        <div field="info" width="25%" headerAlign="center" align="center" allowSort="true">备注
 	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
 	        </div>
 	    </div>
@@ -114,7 +100,7 @@
             
             dg.loading("保存中，请稍后......");
             $.ajax({
-                url: "/jxc/product/save",
+                url: "/product/save",
                 data: { data: json },
                 type: "post",
                 success: function (text) {

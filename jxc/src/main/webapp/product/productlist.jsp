@@ -1,9 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="/jxc/js/nui/nui.js"></script>
+<script src="/js/nui/nui.js"></script>
 <link rel="stylesheet" href="../css/common.css"/>
 <style type="text/css">
 	a{
@@ -116,7 +118,7 @@
 				return;
 			}
 			nui.open({
-       			 url : "/jxc/productmanager/churuku.html",
+       			 url : "/product/churuku.html",
        			 title : "商品入库",
        			 type : 'POST',
        			 width : 500,
@@ -146,7 +148,7 @@
 				return;
 			}
 			nui.open({
-      			 url : "/jxc/productmanager/churuku.html",
+      			 url : "/product/churuku.html",
       			 title : "商品出库",
       			 type : 'POST',
       			 width : 500,
@@ -158,6 +160,7 @@
                   		tiaoma:tiaoma,
                   		huohao:huohao,
                   		name:name,
+                  		danwei:danwei,
                   		op:"out"
                   	 });
         		 },
@@ -192,7 +195,7 @@
 	            
 	            dg.loading("保存中，请稍后......");
 	            $.ajax({
-	                url: "/jxc/product/save",
+	                url: "/product/save",
 	                data: { data: json },
 	                type: "post",
 	                success: function (text) {

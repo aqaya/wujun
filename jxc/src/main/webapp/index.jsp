@@ -108,7 +108,7 @@
             data:"",
             cache: false,
   		 	success:function(text) {
-      		 		window.top.location.href="/jxc/login/logout.html";
+      		 		window.top.location.href="/login/logout.html";
   		 	},
   		 	error : function(text){
   		 		alert("操作失败！")

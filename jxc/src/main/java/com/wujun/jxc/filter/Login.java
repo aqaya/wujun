@@ -61,7 +61,8 @@ public class Login implements Filter {
 				if(username!=null && !username.equals("")){
 					chain.doFilter(request, response);
 				}else{
-					((HttpServletResponse)response).sendRedirect("/jxc/login/login.html");
+					String contextPath = req.getContextPath();
+					((HttpServletResponse)response).sendRedirect(contextPath + "/login/login.html");
 					//request.getRequestDispatcher("/login/login.html").forward(request, response);;
 				}
 			}else{

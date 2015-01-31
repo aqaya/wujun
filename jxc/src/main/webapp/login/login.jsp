@@ -1,9 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
-<script src="/jxc/js/nui/nui.js"></script>
+<script src="/js/nui/nui.js"></script>
 <style type="text/css">
 	.container{
 		width:300px;
@@ -42,7 +44,7 @@
 		nui.parse();
 		window.onload = function(){
 			if(window!=window.top){
-				window.top.location.href = "/jxc/login/login.html"
+				window.top.location.href = "/login/login.html"
 			}
 		}
 		function login(e){
@@ -51,13 +53,13 @@
 	        if (form.isValid() == false) return;
 			var data = form.getData();
 			nui.ajax({
-				url:"/jxc/user/login",
+				url:"/user/login",
      		 	type:'POST',
 	            data:data,
 	            cache: false,
       		 	success:function(text) {
 	      		 	if(text == true) {
-	      		 		window.location.href="/jxc/index.html?username="+data.username;
+	      		 		window.location.href="/index.html?username="+data.username;
 	      		 	} else {
 						document.getElementById("error").style.visibility="visible";
 						setTimeout(function(){

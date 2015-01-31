@@ -36,7 +36,7 @@ public class PriceServiceImpl implements IPriceService {
 		List resultList =  DataConversionUtil.fromObjListToMapList(list);
 		for (Iterator iterator = resultList.iterator(); iterator.hasNext();) {
 			Map m = (Map) iterator.next();
-			int id = (int) m.get("cid");
+			int id = (Integer) m.get("cid");
 			Customer c = customerDao.queryByID(id);
 			m.put("name", c.getName());
 		}

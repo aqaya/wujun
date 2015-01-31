@@ -26,7 +26,7 @@ public class ProductServiceImpl implements IProductService {
 	public Map query(int pageIndex, int pageSize,
 			String sortField, String sortOrder, String tiaoma, String huohao, String name) {
 		List<Product> list = pDao.query(pageIndex, pageSize, sortField, sortOrder,tiaoma,huohao,name);
-		Map map = new HashMap<>();
+		Map map = new HashMap<String, Object>();
 		map.put("data", DataConversionUtil.fromObjListToMapList(list));
 		map.put("total", cs.count(Product.class));
 		return map;

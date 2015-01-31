@@ -48,7 +48,7 @@ public class ProductModule {
 				ps.insert(product);
 			}
 			if (state.equals("removed") || state.equals("deleted")) {
-				int id = (int) row.get("id");
+				int id = (Integer) row.get("id");
 				ps.delete(id);
 			} else if (state.equals("modified") || state.equals("")){ // 更新：_state为空，或modified
 				Product product = (Product) DataConversionUtil.mapToEntity(Product.class, row);

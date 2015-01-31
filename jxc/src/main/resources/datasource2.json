@@ -10,9 +10,9 @@ var ioc = {
         },
         fields : {
             driverClass : 'com.mysql.jdbc.Driver',
-            jdbcUrl : 'jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_wojay',
-            user : 'nmjmlly4z3',
-            password : 'xw53ijylymwylkmxxzwml31j3y2m10k4wwkhwx11'
+            jdbcUrl : 'jdbc:mysql://127.0.0.1:3306/jxc',
+            user : 'root',
+            password : 'root'
         }
     }
 }

@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>修改商品记录</title>
-<script src="/jxc/js/nui/nui.js"></script>
-<link rel="stylesheet" href="../css/common.css"/>
+<script src="/js/nui/nui.js"></script>
+<link rel="stylesheet" href="/css/common.css"/>
 </head>
 <body>
 		<fieldset style="width:95%;height:90%;"> 
@@ -87,7 +89,7 @@
 				return;
 			}
 			nui.ajax({
-				url:"/jxc/product/churuku",
+				url:"/product/churuku",
      		 	type:'POST',
 	            data:{
 	            	id:id,
