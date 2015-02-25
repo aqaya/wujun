@@ -1,0 +1,18 @@
+var ioc = {
+	dao : {
+        type : "org.nutz.dao.impl.NutDao",
+        args : [{refer:"dataSource"}]
+    },
+    dataSource : {
+        type : "com.mchange.v2.c3p0.ComboPooledDataSource",
+        events : {
+            depose : 'close'
+        },
+        fields : {
+            driverClass : 'com.mysql.jdbc.Driver',
+            jdbcUrl : 'jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_wojay',
+            user : 'nmjmlly4z3',
+            password : 'xw53ijylymwylkmxxzwml31j3y2m10k4wwkhwx11'
+        }
+    }
+}
