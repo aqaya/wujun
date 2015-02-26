@@ -2,7 +2,6 @@ package com.wujun.demo.rmi.hello;
 
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
-import java.net.URLDecoder;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -15,12 +14,6 @@ import java.rmi.RemoteException;
 */ 
 public class HelloClient { 
     public static void main(String args[]) throws UnsupportedEncodingException{ 
-    	String str = "<root><params></params><data>%</data></root>";
-    	str = URLDecoder.decode(str);
-    	System.out.println(str);
-    	if(true){
-    		return;
-    	}
         try { 
             //在RMI服务注册表中查找名称为RHello的对象，并调用其上的方法 
             IHello rhello =(IHello) Naming.lookup("rmi://localhost:8888/RHello"); 
