@@ -30,7 +30,7 @@ public class RMIServer {
 			e.printStackTrace();
 		}
 		try {
-			Thread.sleep(30000);// 由于是测试用的因此写在了Main方法中如果正常main执行完毕服务会被关闭，因此需要sleep一会，正常开发过程中这个部分是启动一个新的线程因此不必担心这个问题
+			Thread.sleep(300000);// 由于是测试用的因此写在了Main方法中如果正常main执行完毕服务会被关闭，因此需要sleep一会，正常开发过程中这个部分是启动一个新的线程因此不必担心这个问题
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
