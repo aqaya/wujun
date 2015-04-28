@@ -8,7 +8,7 @@ public class RMIClient {
 	public static void main(String[] args) {
 		try {
 			String hostName = "localhost";// RMIService的地址这里都是在本地执行
-			int port = 33333;// RMIService监听的端口
+			int port = 222;// RMIService监听的端口
 			Registry registry = LocateRegistry.getRegistry(hostName, port);
 			Hello hello = (Hello) registry.lookup("HelloServer");// RMIServer注册时暴露出来的名称
 			String message = hello.sayHello("ender");

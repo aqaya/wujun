@@ -1,13 +1,33 @@
 package com.wujun.demo.rmi.demo;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.rmi.server.RMISocketFactory;
 
 public class RMIServer {
 
-	public static void main(String[] args) {
-
+	public static void main(String[] args) throws IOException {
+		RMISocketFactory.setSocketFactory(new RMISocketFactory() {
+			
+			@Override
+			public Socket createSocket(String host, int port) throws IOException {
+				return new Socket(host,port);
+			}
+			
+			@Override
+			public ServerSocket createServerSocket(int port) throws IOException {
+				if(port == 0){
+					port = 8839;
+				}
+				System.out.println(port);
+				return new ServerSocket(port);
+			}
+		});
 		Registry registry = null;
 		try {
 			registry = LocateRegistry.getRegistry();// 从本地拿
@@ -15,7 +35,7 @@ public class RMIServer {
 			System.out.println("Register the exist server!");// 说明已经有RMIService了不需要在创建一个新的了
 		} catch (RemoteException re) {
 			try {
-				int port = 33333;// RMIService监听的端口，自己指定！
+				int port = 222;// RMIService监听的端口，自己指定！
 				registry = LocateRegistry.createRegistry(port);// 在本地创建
 				System.out.println("Create Registry Server!"); // 创建了一个新的RMIService
 			} catch (Exception e) {
