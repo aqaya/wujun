@@ -6,7 +6,7 @@
   <packaging>pom</packaging>
   <modules>
 
-  <module>../../git_master/Memcached-Java-Client</module>
+  <module>../Memcached-Java-Client</module>
   <module>../memcached-test</module>
   </modules>
 </project>
