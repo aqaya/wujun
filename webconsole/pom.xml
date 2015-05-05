@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>webconsole</artifactId>
+  <packaging>war</packaging>
+  <parent>
+  	<artifactId>parent</artifactId>
+  	<groupId>com.wujun.erp</groupId>
+  	<version>1.0.0</version>
+  	<relativePath>../pom.xml</relativePath>
+  </parent>
+  
+ <dependencies>
+  <dependency>
+   <groupId>junit</groupId>
+   <artifactId>junit</artifactId>
+  </dependency>
+  <!-- Spring framework -->
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-core</artifactId>
+  </dependency>
+  <!-- 2.5.6 -->
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-webmvc</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-beans</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-context</artifactId>
+  </dependency>
+
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-jdbc</artifactId>
+  </dependency>
+
+  <!-- J2EE library -->
+  <dependency>
+   <groupId>javax</groupId>
+   <artifactId>javaee-api</artifactId>
+  </dependency>
+
+  <!-- Hibernate library -->
+  <dependency>
+   <groupId>org.hibernate</groupId>
+   <artifactId>hibernate-core</artifactId>
+  </dependency>
+
+  <!-- Hibernate query library dependecy start -->
+  <dependency>
+   <groupId>javassist</groupId>
+   <artifactId>javassist</artifactId>
+  </dependency>
+
+  <dependency>
+   <groupId>cglib</groupId>
+   <artifactId>cglib</artifactId>
+  </dependency>
+  <!-- Hibernate query library dependecy end -->
+
+  <dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-orm</artifactId>
+  </dependency>
+
+  <!-- Servlet & Jsp -->
+  <dependency>
+   <groupId>javax.servlet</groupId>
+   <artifactId>javax.servlet-api</artifactId>
+  </dependency>
+
+  <dependency>
+   <groupId>javax.servlet.jsp</groupId>
+   <artifactId>jsp-api</artifactId>
+  </dependency>
+
+  <!-- Jakarta Commons -->
+  <dependency>
+   <groupId>commons-fileupload</groupId>
+   <artifactId>commons-fileupload</artifactId>
+  </dependency>
+
+  <!-- mySql -->
+  <dependency>
+   <groupId>mysql</groupId>
+   <artifactId>mysql-connector-java</artifactId>
+  </dependency>
+  </dependencies>
+</project>
