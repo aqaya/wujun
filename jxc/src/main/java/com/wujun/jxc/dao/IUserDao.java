@@ -10,4 +10,6 @@ import com.wujun.jxc.bean.User;
 public interface IUserDao {
 	User queryByUsername(String username);
 	List<User> queryByPager(Condition cnd, Pager pc);
+	int delete(String username);
+	void add(User user);
 }

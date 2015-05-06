@@ -22,4 +22,14 @@ public class UserDaoImpl implements IUserDao {
 		return dao.query(User.class, cnd, pager);
 	}
 
+	@Override
+	public int delete(String username) {
+		return dao.delete(User.class, username);
+	}
+
+	@Override
+	public void add(User user) {
+		dao.insert(user);
+	}
+
 }

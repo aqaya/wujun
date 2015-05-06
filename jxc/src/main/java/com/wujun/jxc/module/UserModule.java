@@ -17,7 +17,8 @@ import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Ok;
 import org.nutz.mvc.annotation.Param;
 
-import com.wujun.jxc.bean.Customer;
+import com.wujun.jxc.auth.AuthCheckImpl;
+import com.wujun.jxc.auth.IAuthCheck;
 import com.wujun.jxc.bean.User;
 import com.wujun.jxc.factory.CountServiceFactory;
 import com.wujun.jxc.factory.DAOFactory;
@@ -29,6 +30,7 @@ import com.wujun.jxc.util.StringUtil;
 
 @At("/user")
 public class UserModule {
+	private static IAuthCheck ac = new AuthCheckImpl();
 	private static Logger logger = Logger.getLogger(UserModule.class);
 	private static IUserService us = new UserServiceImpl();
 	private static Dao dao = DAOFactory.getDao();
@@ -98,5 +100,39 @@ public class UserModule {
 		map.put("data", resultList);
 		map.put("total", total);
 		return JSON.Encode(map);
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@At("/save")
+	public void save(@Param("data")String data,HttpSession session){
+		if(!ac.isAdmin(session)){
+			return;
+		}
+		List<Map> list = (List<Map>) JSON.Decode(data);
+		for (Iterator iterator = list.iterator(); iterator.hasNext();) {
+			Map map = (Map) iterator.next();
+			if("removed".equalsIgnoreCase((String) map.get("_state"))){
+				us.removeByName((String) map.get("username"));
+			}
+		}
+	}
+	
+	@At("/add")
+	public void addUser(@Param("data")String data,HttpSession session){
+		if(!ac.isAdmin(session)){
+			return;
+		}
+		Map map = (Map)(JSON.Decode(data));
+		User user = null;
+		try {
+			user = (User) DataConversionUtil.mapToEntity(User.class, map);
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} 
+		if(user == null )
+			return;
+		us.addUser(user);
 	}
 }

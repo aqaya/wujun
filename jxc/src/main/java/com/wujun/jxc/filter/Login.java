@@ -24,10 +24,8 @@ public class Login implements Filter {
     private static final String IGNORE = "^.+\\.(png|gif|jpg|js|css|jpeg|swf|ico)$";
     private Pattern ignorePtn;
 	public void init(FilterConfig config) throws ServletException {
-		String regx = Strings.sNull(config.getInitParameter("ignore"), IGNORE);
-		if (!"null".equalsIgnoreCase(regx)) {
-			ignorePtn = Pattern.compile(regx, Pattern.CASE_INSENSITIVE);
-		}
+		String regx = IGNORE;
+		ignorePtn = Pattern.compile(regx, Pattern.CASE_INSENSITIVE);
 	}
     /**
      * Default constructor. 

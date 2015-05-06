@@ -36,9 +36,11 @@
                 <td>  
                     <input class="nui-textbox" name="name"/>
                 </td>
-                <td style="text-align:right;width=80px"> </td>
+                <td style="text-align:right;width=80px">
+                	<input class="nui-checkbox" id="ck" name="showBuyPrice" onvaluechanged="cg"/>
+                	</td>
                 <td>  
-                    
+                    	显示进价
                 </td>
             </tr>
             <tr>
@@ -80,10 +82,13 @@
 	        <div field="name" width="15%"  vtype="required" headerAlign="center" allowSort="true">商品名称
 	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
 	        </div>
-	        <div field="jinjia" width="10%"  vtype="float" headerAlign="center" allowSort="true">进价
+	        <div field="jinjia" width="10%"  vtype="float" headerAlign="center" allowSort="true" renderer="renderBuyPrice">进价
 	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
 	        </div>
 	        <div field="shoujia" width="10%"  vtype="float"  headerAlign="center" allowSort="true">售价
+	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
+	        </div>
+	         <div field="youhuijia" width="10%"  vtype="float"  headerAlign="center" allowSort="true">优惠价
 	        	<input property="editor" class="nui-textbox" style="width:100%;"/>
 	        </div>
 	        <div field="kucun" width="10%" headerAlign="center"  vtype="float"  allowSort="true">库存
@@ -101,6 +106,19 @@
 		nui.parse();
 		var dg = nui.get("datagrid1");
 		dg.load();
+		var ck = nui.get("ck");
+		function renderBuyPrice(e){
+			var record = e.record;
+			if(!ck.checked){
+				return "**";
+			}
+			return record.jinjia;
+		}
+		
+		function cg(){
+			doSearch();
+		}
+		
 		function doSearch(){
 			var form = new nui.Form("queryForm");
 			var data = form.getData();

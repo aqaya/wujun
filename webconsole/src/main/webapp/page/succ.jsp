@@ -4,10 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
 <%@include file="/common/common.jsp" %>
+<title>succ.jsp</title>
 </head>
 <body>
-
+	username:${username}
+	<p/>  
+	password:${password}
+	
 </body>
 </html>

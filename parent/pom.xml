@@ -4,6 +4,9 @@
   <artifactId>parent</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
+  <modules>
+  	<module>../webconsole</module>
+  </modules>
 	<properties>
 		<springframework.version>4.1.6.RELEASE</springframework.version>
 		<hibernate.version>4.3.9.Final</hibernate.version>
@@ -64,6 +67,7 @@
 			   <groupId>javax</groupId>
 			   <artifactId>javaee-api</artifactId>
 			   <version>${javaee.version}</version>
+			   <scope>provided</scope>
 			  </dependency>
 			
 			  <!-- Hibernate library -->

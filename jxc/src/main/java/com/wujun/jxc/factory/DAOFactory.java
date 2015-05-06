@@ -9,8 +9,6 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class DAOFactory {
 	private static Ioc ioc;
-	static ComboPooledDataSource ds = new ComboPooledDataSource();
-	
 	public static Dao getDao() {
 		
 	    if (ioc == null){
@@ -18,6 +16,9 @@ public class DAOFactory {
 	    		if (ioc == null){
 	    			ioc = new NutIoc(new JsonLoader("datasource2.json"));
 	    		}
+//	    		if (ioc == null){
+//	    			ioc = new NutIoc(new JsonLoader("datasource.json"));
+//	    		}
 			}
 	    }   
 	    return ioc.get(Dao.class);

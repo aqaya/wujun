@@ -28,5 +28,13 @@ public class UserServiceImpl implements IUserService {
 	public User queryByName(String name) {
 		return ud.queryByUsername(name);
 	}
+	@Override
+	public int removeByName(String username) {
+		return ud.delete(username);
+	}
+	@Override
+	public void addUser(User user) {
+		ud.add(user);
+	}
 
 }

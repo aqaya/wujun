@@ -9,7 +9,7 @@
 </head>
 <body style="height:100%">
 	<div id="datagrid1" showPager="true" class="nui-datagrid" allowSortColumn="true" style="width:100%;height:70%;"
-		dataField="data" totalField="total" idField="id" url="/price/byproductid" allowResize="true" allowCellValid="true"
+		dataField="data" totalField="total" idField="id" url="<%=request.getContextPath() %>/price/byproductid" allowResize="true" allowCellValid="true"
 		allowCellEdit="true" allowCellSelect="true" multiSelect="true" editNextOnEnterKey="true"  editNextRowCell="true">
 	    <div property="columns">
 	   		<div type="indexcolumn"></div>
